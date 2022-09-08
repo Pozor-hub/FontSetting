@@ -25,30 +25,7 @@ namespace FontSetting
             InitializeComponent();
         }
 
-        private void ComboBox_SelectionChangedColor(object sender, SelectionChangedEventArgs e)
-        {
-            if (textBlock == null) return;
-
-            ComboBox comboBox = sender as ComboBox;
-            if (comboBox != null)
-            { 
-                ComboBoxItem item = comboBox.SelectedItem as ComboBoxItem;
-                if (item != null)
-                {
-                    switch (item.Content.ToString())
-                    {
-                        case "Красный": textBlock.Foreground = Brushes.Red; break;
-                        case "Синий": textBlock.Foreground = Brushes.Blue; break;
-                        case "Зелёный": textBlock.Foreground = Brushes.Green; break;
-                        case "Коричневый": textBlock.Foreground = Brushes.Brown; break;
-                        case "Чёрный": textBlock.Foreground = Brushes.Black; break;                       
-                    }
-                }
-            }
-            
-        }
-
-
+       
         private void RadioButton_CheckedChanged(object sender, RoutedEventArgs e)
         {
             if (textBlock == null) return;
@@ -67,6 +44,7 @@ namespace FontSetting
             }
         }
 
+
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
@@ -79,13 +57,39 @@ namespace FontSetting
             FontFamily = new FontFamily(cbi.Content as string);
         }
 
+
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            if (textBlock == null) return;
             Slider slider = sender as Slider;
-            if (slider == null) return;
+            if (slider != null)
+            {
+                textBlock.FontSize = slider.Value;
+            }
 
-            FontSize = slider.Value;
         }
+
+
+        private void ComboBox_SelectionChangedColor(object sender, SelectionChangedEventArgs e)
+        {
+            if (textBlock == null) return;
+
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox != null)
+            {
+                ComboBoxItem item = comboBox.SelectedItem as ComboBoxItem;
+                if (item != null)
+                {
+                    switch (item.Content.ToString())
+                    {
+                        case "Красный": textBlock.Foreground = Brushes.Red; break;
+                        case "Синий": textBlock.Foreground = Brushes.Blue; break;
+                        case "Чёрный": textBlock.Foreground = Brushes.Black; break;
+                    }
+                }
+            }
+        }
+
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {

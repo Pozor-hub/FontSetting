@@ -20,24 +20,11 @@
                 <ComboBoxItem Content="Calibri"></ComboBoxItem>
             </ComboBox>
             
-            <StackPanel Margin="0,10,0,10">
-                <Label>Вес</Label>
-                <CheckBox Click="CheckBox_Checked" IsChecked="False">Жирный</CheckBox>
-            </StackPanel>
-            
-            <StackPanel Margin="0,10,0,10">
-                <Label>Начертание</Label>
-                <RadioButton Checked="RadioButton_CheckedChanged" Name="Style" IsChecked="True" GroupName="FontStyle">Обычный</RadioButton>
-                <RadioButton Checked="RadioButton_CheckedChanged" GroupName="FontStyle">Наклон</RadioButton>
-            </StackPanel>
-            
             <Label>Цвет</Label>
             <ComboBox SelectionChanged="ComboBox_SelectionChangedColor">
                 <ComboBoxItem Content="Красный"></ComboBoxItem>
                 <ComboBoxItem Content="Синий"></ComboBoxItem>
-                <ComboBoxItem Content="Зелёный"></ComboBoxItem>
-                <ComboBoxItem Content="Коричневый"></ComboBoxItem>
-                 <ComboBoxItem Content="Чёрный"></ComboBoxItem>
+                <ComboBoxItem Content="Чёрный"></ComboBoxItem>
             </ComboBox>
 
             <Label>Размер</Label>
@@ -48,8 +35,23 @@
             <RadioButton  Checked="RadioButton_Checked" DataContext="2" Content="По центру" GroupName="TextAlign"></RadioButton>
             <RadioButton Checked="RadioButton_Checked" DataContext="1" Content="По правому" GroupName="TextAlign"></RadioButton>
             <RadioButton  Checked="RadioButton_Checked" DataContext="3" Content="По ширине" GroupName="TextAlign"></RadioButton>
+            
+            <StackPanel Margin="0,10,0,10">
+                <Label>Вес</Label>
+                <CheckBox Click="CheckBox_Checked" IsChecked="False">Жирный</CheckBox>
+            </StackPanel>
+
+            <StackPanel Margin="0,10,0,10">
+                <Label>Начертание</Label>
+                <RadioButton Checked="RadioButton_CheckedChanged" Name="Style" IsChecked="True" GroupName="FontStyle">Обычный</RadioButton>
+                <RadioButton Checked="RadioButton_CheckedChanged" GroupName="FontStyle">Наклон</RadioButton>
+            </StackPanel>
+            
+
+         
         </StackPanel>
 
-        <TextBlock Grid.Column="1" Margin="10" TextWrapping="Wrap" Name="textBlock">wrhreh</TextBlock>
+        <TextBlock Grid.Column="1" Margin="10" TextWrapping="Wrap" Name="textBlock">Когда солнышко отключит отопление -
+Я обхвачу колени твои, чтоб не околели.</TextBlock>
     </Grid>
 </Window>
